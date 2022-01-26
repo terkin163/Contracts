@@ -169,7 +169,7 @@ using SafeMath for uint;
         require( balance[_from] >= _value && allowed[_from][_to] >= _value);
         balance[_from] = balance[_from].sub(_value);
         balance[_to]  = balance[_to].add(_value); 
-        allowed[_from][msg.sender].sub(_value);
+        allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
         emit Transfer (msg.sender, _to, _value);
 
     }
