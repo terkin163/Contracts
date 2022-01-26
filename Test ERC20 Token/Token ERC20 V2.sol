@@ -115,6 +115,7 @@ using SafeMath for uint;
 
     function buyTokens() public payable onlyWhiteList returns(string memory)
     {
+        require(msg.value >= _eth,"Минимально количесво эфира для покупки  1 eth ");
         require(msg.value.mod(_eth) == 0, "Введите целое цисло ETH");//проверка на целое количево эфира
         address payable addpayble = msg.sender;
        
